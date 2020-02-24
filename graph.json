@@ -9,18 +9,6 @@
             "id": "feed2"
         },
         {
-            "group": "4", 
-            "id": "OB_feed1"
-        },
-        {
-            "group": "4", 
-            "id": "OB_feed2"
-        },
-        {
-            "group": "4", 
-            "id": "OB_feed3"
-        },
-        {
             "group": "2", 
             "id": "AR21-U12-ICB1"
         }, 
@@ -54,47 +42,6 @@
         {
             "source": "AR21-U12-ICB2", 
             "target": "feed2", 
-            "value": "40"
-        },
-        {
-            "source": "feed1", 
-            "target": "OB_feed1", 
-            "value": "40"
-        },
-        
-        {
-            "source": "feed2", 
-            "target": "OB_feed1", 
-            "value": "40"
-        },
-        
-        {
-            "source": "ng1-esx12", 
-            "target": "OB_feed2", 
-            "value": "40"
-        },
-        
-        {
-            "source": "ng1-esx11", 
-            "target": "OB_feed2", 
-            "value": "40"
-        },
-        
-        {
-            "source": "feed1", 
-            "target": "OB_feed3", 
-            "value": "40"
-        },
-        
-        {
-            "source": "feed2", 
-            "target": "OB_feed3", 
-            "value": "40"
-        },
-        
-        {
-            "source": "ng1-esx12", 
-            "target": "OB_feed3", 
             "value": "40"
         },
         {
