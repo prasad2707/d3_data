@@ -9,6 +9,18 @@
             "id": "feed2"
         },
         {
+            "group": "4", 
+            "id": "OB_feed1"
+        },
+        {
+            "group": "4", 
+            "id": "OB_feed2"
+        },
+        {
+            "group": "4", 
+            "id": "OB_feed3"
+        },
+        {
             "group": "2", 
             "id": "AR21-U12-ICB1"
         }, 
@@ -24,7 +36,6 @@
             "group": "1", 
             "id": "ng1-esx11"
         }, 
-        
         {
             "group": "2", 
             "id": "AR21-U12-ICB2"
@@ -43,6 +54,47 @@
         {
             "source": "AR21-U12-ICB2", 
             "target": "feed2", 
+            "value": "40"
+        },
+        {
+            "source": "feed1", 
+            "target": "OB_feed1", 
+            "value": "40"
+        },
+        
+        {
+            "source": "feed2", 
+            "target": "OB_feed1", 
+            "value": "40"
+        },
+        
+        {
+            "source": "usplnAGVPCLAB1003", 
+            "target": "OB_feed2", 
+            "value": "40"
+        },
+        
+        {
+            "source": "usplnAGVPCLAB1004", 
+            "target": "OB_feed2", 
+            "value": "40"
+        },
+        
+        {
+            "source": "feed1", 
+            "target": "OB_feed3", 
+            "value": "40"
+        },
+        
+        {
+            "source": "feed2", 
+            "target": "OB_feed3", 
+            "value": "40"
+        },
+        
+        {
+            "source": "usplnAGVPCLAB1003", 
+            "target": "OB_feed3", 
             "value": "40"
         },
         {
