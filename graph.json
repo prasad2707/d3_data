@@ -26,27 +26,27 @@
         },
         {
             "group": "2", 
-            "id": "AR21-U12-ICB1"
+            "id": "Risk"
         }, 
         {
             "group": "3", 
-            "id": "usplnAGVPCLAB1003"
+            "id": "feed3"
         }, 
         {
             "group": "1", 
-            "id": "ng1-esx12"
+            "id": "Asia"
         }, 
         {
             "group": "1", 
-            "id": "ng1-esx11"
+            "id": "Nam"
         }, 
         {
             "group": "2", 
-            "id": "AR21-U12-ICB2"
+            "id": "Fin"
         }, 
         {
             "group": "3", 
-            "id": "usplnAGVPCLAB1004"
+            "id": "feed4"
         }
     ],
     "links": [
@@ -66,12 +66,12 @@
             "value": "40"
         },
         {
-            "source": "AR21-U12-ICB1", 
+            "source": "Risk", 
             "target": "feed1", 
             "value": "40"
         },
         {
-            "source": "AR21-U12-ICB2", 
+            "source": "Fin", 
             "target": "feed2", 
             "value": "40"
         },
@@ -88,13 +88,13 @@
         },
         
         {
-            "source": "usplnAGVPCLAB1003", 
+            "source": "feed3", 
             "target": "OB_feed2", 
             "value": "40"
         },
         
         {
-            "source": "usplnAGVPCLAB1004", 
+            "source": "feed4", 
             "target": "OB_feed2", 
             "value": "40"
         },
@@ -112,48 +112,48 @@
         },
         
         {
-            "source": "usplnAGVPCLAB1003", 
+            "source": "feed3", 
             "target": "OB_feed3", 
             "value": "40"
         },
         {
-            "source": "AR21-U12-ICB1", 
-            "target": "usplnAGVPCLAB1003", 
+            "source": "Risk", 
+            "target": "feed3", 
             "value": "40"
         }, 
         {
-            "source": "AR21-U12-ICB1", 
-            "target": "ng1-esx12", 
+            "source": "Risk", 
+            "target": "Asia", 
             "value": "10"
         }, 
         {
-            "source": "AR21-U12-ICB1", 
-            "target": "ng1-esx11", 
+            "source": "Risk", 
+            "target": "Nam", 
             "value": "10"
         }, 
         {
-            "source": "AR21-U12-ICB2", 
-            "target": "usplnAGVPCLAB1004", 
+            "source": "Fin", 
+            "target": "feed4", 
             "value": "40"
         }, 
         {
-            "source": "AR21-U12-ICB2", 
-            "target": "ng1-esx12", 
+            "source": "Fin", 
+            "target": "Asia", 
             "value": "10"
         }, 
         {
-            "source": "AR21-U12-ICB2", 
-            "target": "ng1-esx11", 
+            "source": "Fin", 
+            "target": "Nam", 
             "value": "10"
         }, 
         {
-            "source": "AR21-U12-ICB2", 
-            "target": "AR21-U12-ICB1", 
+            "source": "Fin", 
+            "target": "Risk", 
             "value": "10"
         }, 
         {
-            "source": "AR21-U12-ICB2", 
-            "target": "AR21-U12-ICB1", 
+            "source": "Fin", 
+            "target": "Risk", 
             "value": "10"
         }
     ]
