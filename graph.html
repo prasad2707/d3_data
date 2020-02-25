@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v4.js"></script>
+
+<!-- Create a div where the graph will take place -->
+<div id="svg_div"></div>
+
+<script>
+
+    var width  = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
+        height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+    svg=d3.select("#svg_div").append("svg").attr("height",height).attr("width",width*0.7)
+
+    d3.json("https://raw.githubusercontent.com/prasad2707/d3_data/master/graph.json", function( data) {
+
+          // Initialize the links
+          var link = svg.selectAll("line").data(data.links).enter().append("line").style("stroke", "#aaa")
+
+          // Initialize the nodes
+          var node = svg.selectAll("circle").data(data.nodes).enter()
+          .append("circle").attr("r", 15).style("fill", "#69b3a2")
+
+node.append("title")
+      .text(function(d) { return d.id; });
+          var label = svg.selectAll(".mytext")
+						.data(data.nodes)
+						.enter()
+						.append("text")
+					    .text(function (d) { return d.id; })
+					    .style("text-anchor", "middle")
+					    .style("fill", "#555")
+					    .style("font-family", "Arial")
+					    .style("font-size", 12);
+
+          node.call(d3.drag().on("start", dragstarted).on("drag", dragged).on("end", dragended));
+
+          var simulation = d3.forceSimulation()
+          .force("link", d3.forceLink().id(function(d) { return d.id; }).distance(200))
+          .force("charge", d3.forceManyBody().strength(-300).distanceMax(500).distanceMin(50))
+          .force("x", d3.forceX(function(d){
+/*                if(d.group === "1"){
+                    return 1*(width*0.7)/6
+                } else if (d.group === "2"){
+                    return 2*(width*0.7)/6
+                } else if (d.group === "3"){
+                    return 3*(width*0.7)/6
+                } else if (d.group === "4"){
+                    return 4*(width*0.7)/6
+                } else if (d.group === "5"){
+                    return 1*(width*0.7)/6
+                } else {
+                    return 0*(width*0.7)/6
+                }
+                */ return parseInt(d.group)*(width*0.7)/6
+          }).strength(1))
+          .force("y", d3.forceY(height/2))
+          .force("center", d3.forceCenter((width*0.7) / 2, height / 2))
+          .force("collision", d3.forceCollide().radius(30));
+          simulation.nodes(data.nodes).on("tick", ticked);
+          simulation.force("link").links(data.links);
+
+        function ticked() {
+            link
+            .attr("x1", function(d) { return d.source.x; })
+            .attr("y1", function(d) { return d.source.y; })
+            .attr("x2", function(d) { return d.target.x; })
+            .attr("y2", function(d) { return d.target.y; });
+
+            node
+            .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"});
+            label.attr("x", function(d){ return d.x; })
+    			 .attr("y", function (d) {return d.y - 10; });
+        }
+        function dragstarted(d) {
+          if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+          d.fx = d.x;
+          d.fy = d.y;
+        }
+
+        function dragged(d) {
+          d.fx = d3.event.x;
+          d.fy = d3.event.y;
+        }
+
+        function dragended(d) {
+          if (!d3.event.active) simulation.alphaTarget(0);
+          d.fx = null;
+          d.fy = null;
+        }
+    });
+
+</script>
