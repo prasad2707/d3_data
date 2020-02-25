@@ -1,6 +1,10 @@
 {
     "nodes": [
         {
+            "group": "5", 
+            "id": "final_feed"
+        },
+        {
             "group": "3", 
             "id": "feed1"
         },
@@ -46,6 +50,21 @@
         }
     ],
     "links": [
+        {
+            "source": "OB_feed1", 
+            "target": "final_feed", 
+            "value": "40"
+        },
+         {
+            "source": "OB_feed2", 
+            "target": "final_feed", 
+            "value": "40"
+        },
+         {
+            "source": "OB_feed3", 
+            "target": "final_feed", 
+            "value": "40"
+        },
         {
             "source": "AR21-U12-ICB1", 
             "target": "feed1", 
